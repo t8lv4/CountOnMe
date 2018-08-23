@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9036ABB3212F2AF200E14D38 /* CountOnMe.app in Resources */ = {isa = PBXBuildFile; fileRef = C926DAD91D7581BB00477020 /* CountOnMe.app */; };
+		9036ABB4212F2B0100E14D38 /* CountOnMeTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */; };
+		9036ABB7212F2B0200E14D38 /* CountOnMeUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAF81D7581BB00477020 /* CountOnMeUITests.xctest */; };
 		C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADC1D7581BB00477020 /* AppDelegate.swift */; };
 		C926DADF1D7581BB00477020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADE1D7581BB00477020 /* ViewController.swift */; };
 		C926DAE21D7581BB00477020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C926DAE01D7581BB00477020 /* Main.storyboard */; };
-		C926DAE41D7581BB00477020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C926DAE31D7581BB00477020 /* Assets.xcassets */; };
+		C926DAE41D7581BB00477020 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = C926DAE31D7581BB00477020 /* AppIcon.appiconset */; };
 		C926DAE71D7581BB00477020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */; };
 		C926DAF21D7581BB00477020 /* CountOnMe_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DAF11D7581BB00477020 /* CountOnMe_Tests.swift */; };
 		C926DAFD1D7581BB00477020 /* CountOnMe_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DAFC1D7581BB00477020 /* CountOnMe_UITests.swift */; };
@@ -39,7 +42,7 @@
 		C926DADC1D7581BB00477020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C926DADE1D7581BB00477020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C926DAE11D7581BB00477020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C926DAE31D7581BB00477020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C926DAE31D7581BB00477020 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = Assets.xcassets/AppIcon.appiconset; sourceTree = "<group>"; };
 		C926DAE61D7581BB00477020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C926DAE81D7581BB00477020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,12 +106,11 @@
 				C926DADC1D7581BB00477020 /* AppDelegate.swift */,
 				C926DADE1D7581BB00477020 /* ViewController.swift */,
 				C926DAE01D7581BB00477020 /* Main.storyboard */,
-				C926DAE31D7581BB00477020 /* Assets.xcassets */,
+				C926DAE31D7581BB00477020 /* AppIcon.appiconset */,
 				C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */,
 				C926DAE81D7581BB00477020 /* Info.plist */,
 			);
-			name = CountOnMe;
-			path = "Zozor+";
+			path = CountOnMe;
 			sourceTree = "<group>";
 		};
 		C926DAF01D7581BB00477020 /* CountOnMeTests */ = {
@@ -117,8 +119,7 @@
 				C926DAF11D7581BB00477020 /* CountOnMe_Tests.swift */,
 				C926DAF31D7581BB00477020 /* Info.plist */,
 			);
-			name = CountOnMeTests;
-			path = "Zozor+Tests";
+			path = CountOnMeTests;
 			sourceTree = "<group>";
 		};
 		C926DAFB1D7581BB00477020 /* CountOnMeUITests */ = {
@@ -127,8 +128,7 @@
 				C926DAFC1D7581BB00477020 /* CountOnMe_UITests.swift */,
 				C926DAFE1D7581BB00477020 /* Info.plist */,
 			);
-			name = CountOnMeUITests;
-			path = "Zozor+UITests";
+			path = CountOnMeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +240,9 @@
 			files = (
 				C926DAE71D7581BB00477020 /* LaunchScreen.storyboard in Resources */,
 				C9DA150A1DF08CF100B0974D /* Default-568h@2x.png in Resources */,
-				C926DAE41D7581BB00477020 /* Assets.xcassets in Resources */,
+				C926DAE41D7581BB00477020 /* AppIcon.appiconset in Resources */,
 				C926DAE21D7581BB00477020 /* Main.storyboard in Resources */,
+				9036ABB3212F2AF200E14D38 /* CountOnMe.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9036ABB4212F2B0100E14D38 /* CountOnMeTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9036ABB7212F2B0200E14D38 /* CountOnMeUITests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +312,7 @@
 				C926DAE11D7581BB00477020 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */ = {
@@ -317,6 +321,7 @@
 				C926DAE61D7581BB00477020 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
