@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9036ABB3212F2AF200E14D38 /* CountOnMe.app in Resources */ = {isa = PBXBuildFile; fileRef = C926DAD91D7581BB00477020 /* CountOnMe.app */; };
 		9036ABB4212F2B0100E14D38 /* CountOnMeTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */; };
 		9036ABB7212F2B0200E14D38 /* CountOnMeUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAF81D7581BB00477020 /* CountOnMeUITests.xctest */; };
 		C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADC1D7581BB00477020 /* AppDelegate.swift */; };
@@ -242,7 +241,6 @@
 				C9DA150A1DF08CF100B0974D /* Default-568h@2x.png in Resources */,
 				C926DAE41D7581BB00477020 /* AppIcon.appiconset in Resources */,
 				C926DAE21D7581BB00477020 /* Main.storyboard in Resources */,
-				9036ABB3212F2AF200E14D38 /* CountOnMe.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
