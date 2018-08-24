@@ -310,7 +310,6 @@
 				C926DAE11D7581BB00477020 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */ = {
@@ -319,7 +318,6 @@
 				C926DAE61D7581BB00477020 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
