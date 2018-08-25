@@ -34,7 +34,7 @@ class Reckon {
             stringNumbers.append("")
     }
 
-    func giveResult() -> Int {
+    func calculate() -> Int {
         var total = 0
 
         for (i, stringNumber) in stringNumbers.enumerated() {

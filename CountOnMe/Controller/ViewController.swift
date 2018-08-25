@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         if !isExpressionCorrect {
             return
         }
-        textView.text = textView.text + "=\(reckon.giveResult())"
+        textView.text = textView.text + "=\(reckon.calculate())"
 
         reckon.clear()
     }
