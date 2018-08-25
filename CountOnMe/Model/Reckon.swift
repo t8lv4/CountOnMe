@@ -24,18 +24,14 @@ class Reckon {
     }
 
     func appendPlusOperator() {
-      //  if canAddOperator {
             operators.append("+")
             stringNumbers.append("")
             print("+++++ \(stringNumbers)")
-      //  }
     }
 
     func appendMinusOperator() {
-       // if canAddOperator {
             operators.append("-")
             stringNumbers.append("")
-       // }
     }
 
     func giveResult() -> Int {
@@ -53,17 +49,8 @@ class Reckon {
         return total
     }
 
-//    var canAddOperator: Bool {
-//        if let stringNumber = stringNumbers.last {
-//            if stringNumber.isEmpty {
-//                let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
-//                alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//                self.present(alertVC, animated: true, completion: nil)
-//                return false
-//            }
-//        }
-//        return true
-//    }
-
-
+    func clear() {
+        stringNumbers = [String()]
+        operators = ["+"]
+    }
 }
