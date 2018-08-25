@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         if canAddOperator {
         	operators.append("+")
         	stringNumbers.append("")
+            print("+++++ \(stringNumbers)")
             updateDisplay()
         }
     }
@@ -83,10 +84,13 @@ class ViewController: UIViewController {
     // MARK: - Methods
 
     func addNewNumber(_ newNumber: Int) {
+        print("addNewN")
         if let stringNumber = stringNumbers.last {
             var stringNumberMutable = stringNumber
             stringNumberMutable += "\(newNumber)"
             stringNumbers[stringNumbers.count-1] = stringNumberMutable
+            print("\(stringNumbers[0])")
+            print("\(stringNumbers.count)")
         }
         updateDisplay()
     }
