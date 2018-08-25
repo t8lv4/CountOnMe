@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     // MARK: - Properties
     let reckon = Reckon()
 
-    var operators: [String] = ["+"]
+
     var index = 0
     var isExpressionCorrect: Bool {
         if let stringNumber = reckon.stringNumbers.last {
@@ -32,17 +32,7 @@ class ViewController: UIViewController {
         return true
     }
 
-    var canAddOperator: Bool {
-        if let stringNumber = reckon.stringNumbers.last {
-            if stringNumber.isEmpty {
-                let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alertVC, animated: true, completion: nil)
-                return false
-            }
-        }
-        return true
-    }
+
 
 
     // MARK: - Outlets
@@ -62,20 +52,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func plus() {
-        if canAddOperator {
-        	operators.append("+")
-        	reckon.stringNumbers.append("")
-            print("+++++ \(reckon.stringNumbers)")
-            updateDisplay()
-        }
+        reckon.appendPlusOperator()
+        updateDisplay()
     }
 
     @IBAction func minus() {
-        if canAddOperator {
-            operators.append("-")
-            reckon.stringNumbers.append("")
-            updateDisplay()
-        }
+        reckon.appendMinusOperator()
+        updateDisplay()
     }
 
     @IBAction func equal() {
@@ -91,19 +74,7 @@ class ViewController: UIViewController {
         if !isExpressionCorrect {
             return
         }
-
-        var total = 0
-        for (i, stringNumber) in reckon.stringNumbers.enumerated() {
-            if let number = Int(stringNumber) {
-                if operators[i] == "+" {
-                    total += number
-                } else if operators[i] == "-" {
-                    total -= number
-                }
-            }
-        }
-
-        textView.text = textView.text + "=\(total)"
+        textView.text = textView.text + "=\(reckon.giveResult())"
 
         clear()
     }
@@ -113,7 +84,7 @@ class ViewController: UIViewController {
         for (i, stringNumber) in reckon.stringNumbers.enumerated() {
             // Add operator
             if i > 0 {
-                text += operators[i]
+                text += reckon.operators[i]
             }
             // Add number
             text += stringNumber
@@ -123,7 +94,7 @@ class ViewController: UIViewController {
 
     func clear() {
         reckon.stringNumbers = [String()]
-        operators = ["+"]
+        reckon.operators = ["+"]
         index = 0
     }
 }
