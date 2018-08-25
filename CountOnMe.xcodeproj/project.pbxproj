@@ -41,7 +41,7 @@
 		C926DADC1D7581BB00477020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C926DADE1D7581BB00477020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C926DAE11D7581BB00477020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C926DAE31D7581BB00477020 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = Assets.xcassets/AppIcon.appiconset; sourceTree = "<group>"; };
+		C926DAE31D7581BB00477020 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		C926DAE61D7581BB00477020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C926DAE81D7581BB00477020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +88,7 @@
 		90D3C22B213185D4003D02D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C926DAE01D7581BB00477020 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +96,7 @@
 		90D3C22C213185EE003D02D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C926DADE1D7581BB00477020 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,6 +104,9 @@
 		90D3C22D21318645003D02D2 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				C926DADC1D7581BB00477020 /* AppDelegate.swift */,
+				C926DAE31D7581BB00477020 /* AppIcon.appiconset */,
+				C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -130,16 +135,11 @@
 		C926DADB1D7581BB00477020 /* CountOnMe */ = {
 			isa = PBXGroup;
 			children = (
-				C926DADC1D7581BB00477020 /* AppDelegate.swift */,
-				C926DADE1D7581BB00477020 /* ViewController.swift */,
-				90D3C22D21318645003D02D2 /* SupportingFiles */,
-				90D3C22B213185D4003D02D2 /* View */,
-				90D3C22A213185C4003D02D2 /* Model */,
-				90D3C22C213185EE003D02D2 /* Controller */,
-				C926DAE01D7581BB00477020 /* Main.storyboard */,
-				C926DAE31D7581BB00477020 /* AppIcon.appiconset */,
-				C926DAE51D7581BB00477020 /* LaunchScreen.storyboard */,
 				C926DAE81D7581BB00477020 /* Info.plist */,
+				90D3C22A213185C4003D02D2 /* Model */,
+				90D3C22B213185D4003D02D2 /* View */,
+				90D3C22C213185EE003D02D2 /* Controller */,
+				90D3C22D21318645003D02D2 /* SupportingFiles */,
 			);
 			path = CountOnMe;
 			sourceTree = "<group>";
