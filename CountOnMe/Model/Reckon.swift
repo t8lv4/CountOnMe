@@ -9,5 +9,16 @@
 import Foundation
 
 class Reckon {
-    
+    var stringNumbers: [String] = [String()]
+
+    func addNewNumber(_ newNumber: Int) {
+        print("addNewN")
+        if let stringNumber = stringNumbers.last {
+            var stringNumberMutable = stringNumber
+            stringNumberMutable += "\(newNumber)"
+            stringNumbers[stringNumbers.count-1] = stringNumberMutable
+            print("\(stringNumbers[0])")
+            print("\(stringNumbers.count)")
+        }
+    }
 }

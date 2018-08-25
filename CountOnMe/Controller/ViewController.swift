@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - Properties
-    var stringNumbers: [String] = [String()]
+    let reckon = Reckon()
+
     var operators: [String] = ["+"]
     var index = 0
     var isExpressionCorrect: Bool {
-        if let stringNumber = stringNumbers.last {
+        if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
-                if stringNumbers.count == 1 {
+                if reckon.stringNumbers.count == 1 {
                     let alertVC = UIAlertController(title: "Zéro!", message: "Démarrez un nouveau calcul !", preferredStyle: .alert)
                     alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alertVC, animated: true, completion: nil)
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
     }
 
     var canAddOperator: Bool {
-        if let stringNumber = stringNumbers.last {
+        if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
                 let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
                 alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -54,16 +55,17 @@ class ViewController: UIViewController {
     @IBAction func tappedNumberButton(_ sender: UIButton) {
         for (i, numberButton) in numberButtons.enumerated() {
             if sender == numberButton {
-                addNewNumber(i)
+                reckon.addNewNumber(i)
             }
         }
+        updateDisplay()
     }
 
     @IBAction func plus() {
         if canAddOperator {
         	operators.append("+")
-        	stringNumbers.append("")
-            print("+++++ \(stringNumbers)")
+        	reckon.stringNumbers.append("")
+            print("+++++ \(reckon.stringNumbers)")
             updateDisplay()
         }
     }
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
     @IBAction func minus() {
         if canAddOperator {
             operators.append("-")
-            stringNumbers.append("")
+            reckon.stringNumbers.append("")
             updateDisplay()
         }
     }
@@ -83,17 +85,7 @@ class ViewController: UIViewController {
 
     // MARK: - Methods
 
-    func addNewNumber(_ newNumber: Int) {
-        print("addNewN")
-        if let stringNumber = stringNumbers.last {
-            var stringNumberMutable = stringNumber
-            stringNumberMutable += "\(newNumber)"
-            stringNumbers[stringNumbers.count-1] = stringNumberMutable
-            print("\(stringNumbers[0])")
-            print("\(stringNumbers.count)")
-        }
-        updateDisplay()
-    }
+
 
     func calculateTotal() {
         if !isExpressionCorrect {
@@ -101,7 +93,7 @@ class ViewController: UIViewController {
         }
 
         var total = 0
-        for (i, stringNumber) in stringNumbers.enumerated() {
+        for (i, stringNumber) in reckon.stringNumbers.enumerated() {
             if let number = Int(stringNumber) {
                 if operators[i] == "+" {
                     total += number
@@ -118,7 +110,7 @@ class ViewController: UIViewController {
 
     func updateDisplay() {
         var text = ""
-        for (i, stringNumber) in stringNumbers.enumerated() {
+        for (i, stringNumber) in reckon.stringNumbers.enumerated() {
             // Add operator
             if i > 0 {
                 text += operators[i]
@@ -130,7 +122,7 @@ class ViewController: UIViewController {
     }
 
     func clear() {
-        stringNumbers = [String()]
+        reckon.stringNumbers = [String()]
         operators = ["+"]
         index = 0
     }
