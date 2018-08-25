@@ -10,6 +10,7 @@
 		9036ABB4212F2B0100E14D38 /* CountOnMeTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */; };
 		9036ABB7212F2B0200E14D38 /* CountOnMeUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAF81D7581BB00477020 /* CountOnMeUITests.xctest */; };
 		90D3C22F213189DB003D02D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D3C22E213189DB003D02D2 /* Assets.xcassets */; };
+		90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3C2322131AA09003D02D2 /* Reckon.swift */; };
 		C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADC1D7581BB00477020 /* AppDelegate.swift */; };
 		C926DADF1D7581BB00477020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADE1D7581BB00477020 /* ViewController.swift */; };
 		C926DAE21D7581BB00477020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C926DAE01D7581BB00477020 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		90D3C22E213189DB003D02D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90D3C2322131AA09003D02D2 /* Reckon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reckon.swift; sourceTree = "<group>"; };
 		C926DAD91D7581BB00477020 /* CountOnMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountOnMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C926DADC1D7581BB00477020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C926DADE1D7581BB00477020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		90D3C22A213185C4003D02D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				90D3C2322131AA09003D02D2 /* Reckon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C926DADF1D7581BB00477020 /* ViewController.swift in Sources */,
+				90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */,
 				C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
