@@ -24,18 +24,20 @@ class Reckon {
     }
 
     func appendPlusOperator() {
-            operators.append("+")
-            stringNumbers.append("")
-            print("+++++ \(stringNumbers)")
+        operators.append("+")
+        stringNumbers.append("")
+        print("+++++ \(stringNumbers)")
+        print("+++++ \(operators)")
     }
 
     func appendMinusOperator() {
-            operators.append("-")
-            stringNumbers.append("")
+        operators.append("-")
+        stringNumbers.append("")
     }
 
     func calculate() -> Int {
         var total = 0
+
 
         for (i, stringNumber) in stringNumbers.enumerated() {
             if let number = Int(stringNumber) {

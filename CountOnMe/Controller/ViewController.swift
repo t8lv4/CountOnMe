@@ -61,21 +61,20 @@ class ViewController: UIViewController {
     }
 
     func isExpressionCorrect() -> Bool {
-        if let stringNumber = reckon.stringNumbers.last {
-            if stringNumber.isEmpty {
                 if reckon.stringNumbers.count == 1 {
                     presentVCAlert(with: "Démarrez un nouveau calcul !")
-                } else {
+                                    return false
+                } else if reckon.stringNumbers.contains("") {
                     presentVCAlert(with: "Entrez une expression correcte !")
-                }
-                return false
-            }
+                    return false
         }
+
+
         return true
     }
 
     private func presentVCAlert(with alert: String) {
-        let alertVC = UIAlertController(title: "Zéro!", message: alert, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Erreur !", message: alert, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
@@ -101,6 +100,5 @@ class ViewController: UIViewController {
         }
         textView.text = text
     }
-
 
 }
