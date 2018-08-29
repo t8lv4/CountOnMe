@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func equal() {
-        calculateTotal()
+        renderReckon()
     }
 
 
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
 
-    func calculateTotal() {
+    func renderReckon() {
         if !isExpressionCorrect() {
             return
         }
