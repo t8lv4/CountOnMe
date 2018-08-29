@@ -45,7 +45,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func equal() {
-        renderReckon()
+        if isExpressionCorrect() {
+            renderReckon()
+        }
     }
 
 
@@ -61,15 +63,13 @@ class ViewController: UIViewController {
     }
 
     func isExpressionCorrect() -> Bool {
-                if reckon.stringNumbers.count == 1 {
-                    presentVCAlert(with: "Démarrez un nouveau calcul !")
-                                    return false
-                } else if reckon.stringNumbers.contains("") {
-                    presentVCAlert(with: "Entrez une expression correcte !")
-                    return false
+        if reckon.stringNumbers.count == 1 {
+            presentVCAlert(with: "Démarrez un nouveau calcul !")
+            return false
+        } else if reckon.stringNumbers.last == "" {
+            presentVCAlert(with: "Entrez une expression correcte !")
+            return false
         }
-
-
         return true
     }
 
@@ -80,11 +80,7 @@ class ViewController: UIViewController {
     }
 
     func renderReckon() {
-        if !isExpressionCorrect() {
-            return
-        }
         textView.text = textView.text + "=\(reckon.calculate())"
-
         reckon.clear()
     }
 
