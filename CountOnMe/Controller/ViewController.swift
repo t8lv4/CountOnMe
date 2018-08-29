@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let reckon = Reckon()
 
 
-    var isExpressionCorrect: Bool {
+    func isExpressionCorrect() -> Bool {
         if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
                 if reckon.stringNumbers.count == 1 {
@@ -71,20 +71,20 @@ class ViewController: UIViewController {
 
     // MARK: - Methods
 
-        func canAddOperator() -> Bool {
-            if let stringNumber = reckon.stringNumbers.last {
-                if stringNumber.isEmpty {
-                    let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
-                    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(alertVC, animated: true, completion: nil)
-                    return false
-                }
+    func canAddOperator() -> Bool {
+        if let stringNumber = reckon.stringNumbers.last {
+            if stringNumber.isEmpty {
+                let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
+                return false
             }
-            return true
         }
+        return true
+    }
 
     func calculateTotal() {
-        if !isExpressionCorrect {
+        if !isExpressionCorrect() {
             return
         }
         textView.text = textView.text + "=\(reckon.calculate())"
