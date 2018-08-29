@@ -13,26 +13,6 @@ class ViewController: UIViewController {
     let reckon = Reckon()
 
 
-    func isExpressionCorrect() -> Bool {
-        if let stringNumber = reckon.stringNumbers.last {
-            if stringNumber.isEmpty {
-                if reckon.stringNumbers.count == 1 {
-                    let alertVC = UIAlertController(title: "Zéro!", message: "Démarrez un nouveau calcul !", preferredStyle: .alert)
-                    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(alertVC, animated: true, completion: nil)
-                } else {
-                    let alertVC = UIAlertController(title: "Zéro!", message: "Entrez une expression correcte !", preferredStyle: .alert)
-                    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(alertVC, animated: true, completion: nil)
-                }
-                return false
-            }
-        }
-        return true
-    }
-
-
-
 
     // MARK: - Outlets
 
@@ -74,13 +54,30 @@ class ViewController: UIViewController {
     func canAddOperator() -> Bool {
         if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
-                let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alertVC, animated: true, completion: nil)
+                presentVCAlert(with: "expression incorrecte !")
+            }
+        }
+        return true
+    }
+
+    func isExpressionCorrect() -> Bool {
+        if let stringNumber = reckon.stringNumbers.last {
+            if stringNumber.isEmpty {
+                if reckon.stringNumbers.count == 1 {
+                    presentVCAlert(with: "Démarrez un nouveau calcul !")
+                } else {
+                    presentVCAlert(with: "Entrez une expression correcte !")
+                }
                 return false
             }
         }
         return true
+    }
+
+    private func presentVCAlert(with alert: String) {
+        let alertVC = UIAlertController(title: "Zéro!", message: alert, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
 
     func calculateTotal() {
