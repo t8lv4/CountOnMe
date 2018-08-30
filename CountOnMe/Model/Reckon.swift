@@ -12,6 +12,8 @@ class Reckon {
     var numberArray: [String] = [String()]
     var operatorArray: [String] = ["+"]
 
+    //MARK: - append numbers abd operators
+
     func addNewNumber(_ newNumber: Int) {
         if let stringNumber = numberArray.last {
             var stringNumberMutable = stringNumber
@@ -30,6 +32,16 @@ class Reckon {
         numberArray.append("")
     }
 
+    //MARK: - calculate
+
+    func returnResult() -> Int {
+        var result = 0
+        for (index, stringNumber) in numberArray.enumerated() {
+            calculate(stringNumber, index, &result)
+        }
+        return result
+    }
+
     private func calculate(_ stringNumber: String, _ index: Int, _ result: inout Int) {
         if let number = Int(stringNumber) {
             if operatorArray[index] == "+" {
@@ -40,15 +52,7 @@ class Reckon {
         }
     }
 
-    func returnResult() -> Int {
-        var result = 0
-
-        for (index, stringNumber) in numberArray.enumerated() {
-            calculate(stringNumber, index, &result)
-        }
-
-        return result
-    }
+    //MARK: - reset
 
     func resetArrays() {
         numberArray = [String()]
