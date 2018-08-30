@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9036ABB4212F2B0100E14D38 /* CountOnMeTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAED1D7581BB00477020 /* CountOnMeTests.xctest */; };
 		9036ABB7212F2B0200E14D38 /* CountOnMeUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C926DAF81D7581BB00477020 /* CountOnMeUITests.xctest */; };
+		906FE5C221382D620041FFF1 /* ViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FE5C121382D620041FFF1 /* ViewController+UIAlertController.swift */; };
 		90D3C22F213189DB003D02D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D3C22E213189DB003D02D2 /* Assets.xcassets */; };
 		90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3C2322131AA09003D02D2 /* Reckon.swift */; };
 		C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926DADC1D7581BB00477020 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		906FE5C121382D620041FFF1 /* ViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 		90D3C22E213189DB003D02D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90D3C2322131AA09003D02D2 /* Reckon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reckon.swift; sourceTree = "<group>"; };
 		C926DAD91D7581BB00477020 /* CountOnMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountOnMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		906FE5C021382D040041FFF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				906FE5C121382D620041FFF1 /* ViewController+UIAlertController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		90D3C22A213185C4003D02D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 				90D3C22A213185C4003D02D2 /* Model */,
 				90D3C22B213185D4003D02D2 /* View */,
 				90D3C22C213185EE003D02D2 /* Controller */,
+				906FE5C021382D040041FFF1 /* Extensions */,
 				90D3C22D21318645003D02D2 /* SupportingFiles */,
 			);
 			path = CountOnMe;
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C926DADF1D7581BB00477020 /* ViewController.swift in Sources */,
+				906FE5C221382D620041FFF1 /* ViewController+UIAlertController.swift in Sources */,
 				90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */,
 				C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */,
 			);

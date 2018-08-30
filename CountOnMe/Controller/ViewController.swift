@@ -71,19 +71,6 @@ class ViewController: UIViewController {
         return true
     }
 
-
-    // display
-
-    private func presentVCAlert(with message: String) {
-        let alertVC = UIAlertController(title: "Erreur !", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alertVC, animated: true, completion: {
-            self.reckon.resetArrays()
-            self.textView.text = ""
-        })
-    }
-
-
     private func renderReckon() {
         textView.text = textView.text + "=\(reckon.returnResult())"
         reckon.resetArrays()
