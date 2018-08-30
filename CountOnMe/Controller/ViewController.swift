@@ -50,10 +50,11 @@ class ViewController: UIViewController {
     // MARK: - Methods
 
     //check input validity
+
     private func canAddOperator() -> Bool {
         if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
-                presentVCAlert(with: "expression incorrecte !")
+                presentVCAlert(with: "Expression incorrecte !")
             }
         }
         return true
