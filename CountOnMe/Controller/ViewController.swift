@@ -22,11 +22,7 @@ class ViewController: UIViewController {
     // MARK: - Action
 
     @IBAction func tappedNumberButton(_ sender: UIButton) {
-        for (i, numberButton) in numberButtons.enumerated() {
-            if sender == numberButton {
-                reckon.addNewNumber(i)
-            }
-        }
+        displayTappedNumber(from: sender)
         updateDisplay()
     }
 
@@ -53,7 +49,8 @@ class ViewController: UIViewController {
 
     // MARK: - Methods
 
-    func canAddOperator() -> Bool {
+    //check input validity
+    private func canAddOperator() -> Bool {
         if let stringNumber = reckon.stringNumbers.last {
             if stringNumber.isEmpty {
                 presentVCAlert(with: "expression incorrecte !")
@@ -62,7 +59,7 @@ class ViewController: UIViewController {
         return true
     }
 
-    func isExpressionCorrect() -> Bool {
+    private func isExpressionCorrect() -> Bool {
         if reckon.stringNumbers.count == 1 {
             presentVCAlert(with: "Démarrez un nouveau calcul !")
             return false
@@ -73,23 +70,35 @@ class ViewController: UIViewController {
         return true
     }
 
+
+    // display
+
     private func presentVCAlert(with alert: String) {
         let alertVC = UIAlertController(title: "Erreur !", message: alert, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
 
-    func renderReckon() {
+
+    private func renderReckon() {
         textView.text = textView.text + "=\(reckon.calculate())"
         reckon.clear()
     }
 
-    func updateDisplay() {
+    private func displayTappedNumber(from sender: UIButton) {
+        for (counter, numberButton) in numberButtons.enumerated() {
+            if sender == numberButton {
+                reckon.addNewNumber(counter)
+            }
+        }
+    }
+
+    private func updateDisplay() {
         var text = ""
-        for (i, stringNumber) in reckon.stringNumbers.enumerated() {
+        for (index, stringNumber) in reckon.stringNumbers.enumerated() {
             // Add operator
-            if i > 0 {
-                text += reckon.operators[i]
+            if index > 0 {
+                text += reckon.operators[index]
             }
             // Add number
             text += stringNumber
