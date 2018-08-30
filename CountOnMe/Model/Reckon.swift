@@ -9,8 +9,8 @@
 import Foundation
 
 class Reckon {
-    var numberArray: [String] = [String()]
-    var operatorArray: [String] = ["+"]
+    var numberArray = [String()]
+    var operatorArray = ["+"]
 
     //MARK: - append numbers abd operators
 
