@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     //check input validity
 
     private func canAddOperator() -> Bool {
-        if let stringNumber = reckon.stringNumbers.last {
+        if let stringNumber = reckon.numberArray.last {
             if stringNumber.isEmpty {
                 presentVCAlert(with: "Expression incorrecte !")
             }
@@ -61,10 +61,10 @@ class ViewController: UIViewController {
     }
 
     private func isExpressionCorrect() -> Bool {
-        if reckon.stringNumbers.count == 1 {
+        if reckon.numberArray.count == 1 {
             presentVCAlert(with: "Démarrez un nouveau calcul !")
             return false
-        } else if reckon.stringNumbers.last == "" {
+        } else if reckon.numberArray.last == "" {
             presentVCAlert(with: "Entrez une expression correcte !")
             return false
         }
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 
 
     private func renderReckon() {
-        textView.text = textView.text + "=\(reckon.calculate())"
+        textView.text = textView.text + "=\(reckon.returnResult())"
         reckon.resetArrays()
     }
 
@@ -99,10 +99,10 @@ class ViewController: UIViewController {
 
     private func updateDisplay() {
         var text = ""
-        for (index, stringNumber) in reckon.stringNumbers.enumerated() {
+        for (index, stringNumber) in reckon.numberArray.enumerated() {
             // Add operator
             if index > 0 {
-                text += reckon.operators[index]
+                text += reckon.operatorArray[index]
             }
             // Add number
             text += stringNumber

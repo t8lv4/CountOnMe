@@ -9,50 +9,54 @@
 import Foundation
 
 class Reckon {
-    var stringNumbers: [String] = [String()]
-    var operators: [String] = ["+"]
+    var numberArray: [String] = [String()]
+    var operatorArray: [String] = ["+"]
 
     func addNewNumber(_ newNumber: Int) {
         print("addNewN")
-        if let stringNumber = stringNumbers.last {
+        if let stringNumber = numberArray.last {
             var stringNumberMutable = stringNumber
             stringNumberMutable += "\(newNumber)"
-            stringNumbers[stringNumbers.count-1] = stringNumberMutable
-            print("\(stringNumbers[0])")
-            print("\(stringNumbers.count)")
+            numberArray[numberArray.count-1] = stringNumberMutable
+            print("\(numberArray[0])")
+            print("\(numberArray.count)")
         }
     }
 
     func appendPlusOperator() {
-        operators.append("+")
-        stringNumbers.append("")
-        print("+++++ \(stringNumbers)")
-        print("+++++ \(operators)")
+        operatorArray.append("+")
+        numberArray.append("")
+        print("+++++ \(numberArray)")
+        print("+++++ \(operatorArray)")
     }
 
     func appendMinusOperator() {
-        operators.append("-")
-        stringNumbers.append("")
+        operatorArray.append("-")
+        numberArray.append("")
     }
 
-    func calculate() -> Int {
-        var total = 0
-
-
-        for (i, stringNumber) in stringNumbers.enumerated() {
-            if let number = Int(stringNumber) {
-                if operators[i] == "+" {
-                    total += number
-                } else if operators[i] == "-" {
-                    total -= number
-                }
+    private func calculate(_ stringNumber: String, _ index: Int, _ result: inout Int) {
+        if let number = Int(stringNumber) {
+            if operatorArray[index] == "+" {
+                result += number
+            } else if operatorArray[index] == "-" {
+                result -= number
             }
         }
-        return total
+    }
+
+    func returnResult() -> Int {
+        var result = 0
+
+        for (index, stringNumber) in numberArray.enumerated() {
+            calculate(stringNumber, index, &result)
+        }
+
+        return result
     }
 
     func resetArrays() {
-        stringNumbers = [String()]
-        operators = ["+"]
+        numberArray = [String()]
+        operatorArray = ["+"]
     }
 }
