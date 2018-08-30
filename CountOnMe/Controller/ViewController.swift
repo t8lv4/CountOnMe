@@ -76,13 +76,16 @@ class ViewController: UIViewController {
     private func presentVCAlert(with alert: String) {
         let alertVC = UIAlertController(title: "Erreur !", message: alert, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alertVC, animated: true, completion: nil)
+        self.present(alertVC, animated: true, completion: {
+            self.reckon.resetArrays()
+            self.textView.text = ""
+        })
     }
 
 
     private func renderReckon() {
         textView.text = textView.text + "=\(reckon.calculate())"
-        reckon.clear()
+        reckon.resetArrays()
     }
 
     private func displayTappedNumber(from sender: UIButton) {

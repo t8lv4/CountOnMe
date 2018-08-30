@@ -51,7 +51,7 @@ class Reckon {
         return total
     }
 
-    func clear() {
+    func resetArrays() {
         stringNumbers = [String()]
         operators = ["+"]
     }
