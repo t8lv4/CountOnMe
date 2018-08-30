@@ -13,21 +13,16 @@ class Reckon {
     var operatorArray: [String] = ["+"]
 
     func addNewNumber(_ newNumber: Int) {
-        print("addNewN")
         if let stringNumber = numberArray.last {
             var stringNumberMutable = stringNumber
             stringNumberMutable += "\(newNumber)"
             numberArray[numberArray.count-1] = stringNumberMutable
-            print("\(numberArray[0])")
-            print("\(numberArray.count)")
         }
     }
 
     func appendPlusOperator() {
         operatorArray.append("+")
         numberArray.append("")
-        print("+++++ \(numberArray)")
-        print("+++++ \(operatorArray)")
     }
 
     func appendMinusOperator() {
