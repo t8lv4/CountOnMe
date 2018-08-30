@@ -74,8 +74,8 @@ class ViewController: UIViewController {
 
     // display
 
-    private func presentVCAlert(with alert: String) {
-        let alertVC = UIAlertController(title: "Erreur !", message: alert, preferredStyle: .alert)
+    private func presentVCAlert(with message: String) {
+        let alertVC = UIAlertController(title: "Erreur !", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: {
             self.reckon.resetArrays()

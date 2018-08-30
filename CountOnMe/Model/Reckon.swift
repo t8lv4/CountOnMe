@@ -12,7 +12,7 @@ class Reckon {
     var numberArray = [String()]
     var operatorArray = ["+"]
 
-    //MARK: - append numbers abd operators
+    //MARK: - append numbers and operators
 
     func addNewNumber(_ newNumber: Int) {
         if let stringNumber = numberArray.last {
