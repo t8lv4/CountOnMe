@@ -24,7 +24,23 @@ class ViewController: UIViewController {
         updateDisplay()
     }
 
-    @IBAction func plus() {
+
+    @IBAction func operationTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            inputPlus()
+        case 1:
+            inputMinus()
+        case 2:
+            inputEqual()
+        default:
+            return
+        }
+    }
+
+    // MARK: - Methods
+
+    private func inputPlus() {
         if reckon.canAddOperator() {
             reckon.appendPlusOperator()
             updateDisplay()
@@ -33,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func minus() {
+    private func inputMinus() {
         if reckon.canAddOperator() {
             reckon.appendMinusOperator()
             updateDisplay()
@@ -42,9 +58,8 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func equal() {
-        let returnedValue = reckon.isExpressionCorrect()
-        switch returnedValue {
+    private func inputEqual() {
+        switch reckon.isExpressionCorrect() {
         case 0:
             presentVCAlert(with: "Démarrez un nouveau calcul !")
         case 1:
@@ -53,9 +68,6 @@ class ViewController: UIViewController {
             renderReckon()
         }
     }
-
-
-    // MARK: - Methods
 
     private func renderReckon() {
         textView.text = textView.text + "=\(reckon.returnResult())"
