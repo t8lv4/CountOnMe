@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     // MARK: - Properties
     let reckon = Reckon()
 
-
-
     // MARK: - Outlets
 
     @IBOutlet weak var textView: UITextView!
@@ -22,26 +20,36 @@ class ViewController: UIViewController {
     // MARK: - Action
 
     @IBAction func tappedNumberButton(_ sender: UIButton) {
-        displayTappedNumber(from: sender)
+        recordTappedNumber(from: sender)
         updateDisplay()
     }
 
     @IBAction func plus() {
-        if canAddOperator() {
+        if reckon.canAddOperator() {
             reckon.appendPlusOperator()
             updateDisplay()
+        } else {
+            presentVCAlert(with: "Expression incorrecte !")
         }
     }
 
     @IBAction func minus() {
-        if canAddOperator() {
+        if reckon.canAddOperator() {
             reckon.appendMinusOperator()
             updateDisplay()
+        } else {
+            presentVCAlert(with: "Expression incorrecte !")
         }
     }
 
     @IBAction func equal() {
-        if isExpressionCorrect() {
+        let returnedValue = reckon.isExpressionCorrect()
+        switch returnedValue {
+        case 0:
+            presentVCAlert(with: "Démarrez un nouveau calcul !")
+        case 1:
+            presentVCAlert(with: "Entrez une expression correcte !")
+        default:
             renderReckon()
         }
     }
@@ -49,34 +57,12 @@ class ViewController: UIViewController {
 
     // MARK: - Methods
 
-    //check input validity
-
-    private func canAddOperator() -> Bool {
-        if let stringNumber = reckon.numberArray.last {
-            if stringNumber.isEmpty {
-                presentVCAlert(with: "Expression incorrecte !")
-            }
-        }
-        return true
-    }
-
-    private func isExpressionCorrect() -> Bool {
-        if reckon.numberArray.count == 1 {
-            presentVCAlert(with: "Démarrez un nouveau calcul !")
-            return false
-        } else if reckon.numberArray.last == "" {
-            presentVCAlert(with: "Entrez une expression correcte !")
-            return false
-        }
-        return true
-    }
-
     private func renderReckon() {
         textView.text = textView.text + "=\(reckon.returnResult())"
         reckon.resetArrays()
     }
 
-    private func displayTappedNumber(from sender: UIButton) {
+    private func recordTappedNumber(from sender: UIButton) {
         for (counter, numberButton) in numberButtons.enumerated() {
             if sender == numberButton {
                 reckon.addNewNumber(counter)

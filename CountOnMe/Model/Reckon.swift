@@ -52,6 +52,27 @@ class Reckon {
         }
     }
 
+    //MARK: - check operation validity
+
+    func canAddOperator() -> Bool {
+        if let stringNumber = numberArray.last {
+            if stringNumber.isEmpty {
+                return false
+            }
+        }
+        return true
+    }
+
+    func isExpressionCorrect() -> Int {
+        if numberArray.count == 1 {
+            return 0
+        } else if numberArray.last == "" {
+            return 1
+        }
+        return 2
+    }
+
+
     //MARK: - reset
 
     func resetArrays() {
