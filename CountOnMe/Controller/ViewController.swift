@@ -3,7 +3,6 @@
 //  CountOnMe
 //
 //  Created by Ambroise COLLON on 30/08/2016.
-//  Copyright © 2016 Ambroise Collon. All rights reserved.
 //
 
 import UIKit
@@ -12,8 +11,13 @@ class ViewController: UIViewController {
     // MARK: - Properties
     let reckon = Reckon()
 
-    // MARK: - Outlets
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reckon.resetArrays()
+    }
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
 
@@ -75,7 +79,7 @@ class ViewController: UIViewController {
     private func updateDisplay() {
         var text = ""
         for (index, stringNumber) in reckon.numberArray.enumerated() {
-            // Add operator
+            // Add operation symbol
             if index > 0 {
                 text += reckon.operationSymbolArray[index]
             }
@@ -84,5 +88,24 @@ class ViewController: UIViewController {
         }
         textView.text = text
     }
+
+//    func appendReckonArrays(_ count: Int) {
+//        reckon.numberArray.removeAll()
+//        for _ in 0...count {
+//            let anyNumber = Int(arc4random_uniform(100))
+//            reckon.numberArray.append(String(anyNumber))
+//
+//            let availableOperationSymbols = ["+", "-"]
+//            // Generate a random index
+//            let randomIndex = Int(arc4random_uniform(UInt32(availableOperationSymbols.count)))
+//            // Get a random item
+//            let anyOperationSymbol = availableOperationSymbols[randomIndex]
+//            reckon.operationSymbolArray.append(anyOperationSymbol)
+//        }
+//        print(reckon.numberArray)
+//        print(reckon.operationSymbolArray)
+//
+//        print(reckon.returnResult())
+//    }
 
 }

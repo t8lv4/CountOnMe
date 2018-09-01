@@ -1,15 +1,14 @@
 //
-//  Zozor_Tests.swift
+//  CountOnMeTests.swift
 //  CountOnMeTests
 //
-//  Created by Ambroise COLLON on 30/08/2016.
-//  Copyright © 2016 Ambroise Collon. All rights reserved.
+//  Created by Morgan on 01/09/2018.
+//  Copyright © 2018 Ambroise Collon. All rights reserved.
 //
 
 import XCTest
-@testable import CountOnMe
 
-class Zozor_Tests: XCTestCase {
+class CountOnMeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
