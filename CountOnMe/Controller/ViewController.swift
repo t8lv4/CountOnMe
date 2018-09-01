@@ -28,9 +28,9 @@ class ViewController: UIViewController {
     @IBAction func operationTapped(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            inputPlus()
+            inputOperationSymbol(with: "plus")
         case 1:
-            inputMinus()
+            inputOperationSymbol(with: "minus")
         case 2:
             inputEqual()
         default:
@@ -40,18 +40,8 @@ class ViewController: UIViewController {
 
     // MARK: - Methods
 
-    private func inputPlus() {
-        if reckon.canAddOperator() {
-            reckon.appendPlusOperator()
-            updateDisplay()
-        } else {
-            presentVCAlert(with: "Expression incorrecte !")
-        }
-    }
-
-    private func inputMinus() {
-        if reckon.canAddOperator() {
-            reckon.appendMinusOperator()
+    private func inputOperationSymbol(with symbol: String) {
+        if reckon.canAddOperationSymbol(symbol) {
             updateDisplay()
         } else {
             presentVCAlert(with: "Expression incorrecte !")
@@ -87,7 +77,7 @@ class ViewController: UIViewController {
         for (index, stringNumber) in reckon.numberArray.enumerated() {
             // Add operator
             if index > 0 {
-                text += reckon.operatorArray[index]
+                text += reckon.operationSymbolArray[index]
             }
             // Add number
             text += stringNumber

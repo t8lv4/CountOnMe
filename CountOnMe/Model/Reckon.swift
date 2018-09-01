@@ -3,16 +3,15 @@
 //  CountOnMe
 //
 //  Created by Morgan on 25/08/2018.
-//  Copyright © 2018 Ambroise Collon. All rights reserved.
 //
 
 import Foundation
 
 class Reckon {
     var numberArray = [String()]
-    var operatorArray = ["+"]
+    var operationSymbolArray = ["+"]
 
-    //MARK: - append numbers and operators
+    //MARK: - append numbers and operation symbols
 
     func addNewNumber(_ newNumber: Int) {
         if let stringNumber = numberArray.last {
@@ -22,14 +21,17 @@ class Reckon {
         }
     }
 
-    func appendPlusOperator() {
-        operatorArray.append("+")
-        numberArray.append("")
-    }
-
-    func appendMinusOperator() {
-        operatorArray.append("-")
-        numberArray.append("")
+    func appendOperationSymbol(with symbol: String) {
+        switch symbol {
+        case "plus":
+            operationSymbolArray.append("+")
+            numberArray.append("")
+        case "minus":
+            operationSymbolArray.append("-")
+            numberArray.append("")
+        default:
+            return
+        }
     }
 
     //MARK: - calculate
@@ -44,9 +46,9 @@ class Reckon {
 
     private func calculate(_ stringNumber: String, _ index: Int, _ result: inout Int) {
         if let number = Int(stringNumber) {
-            if operatorArray[index] == "+" {
+            if operationSymbolArray[index] == "+" {
                 result += number
-            } else if operatorArray[index] == "-" {
+            } else if operationSymbolArray[index] == "-" {
                 result -= number
             }
         }
@@ -54,12 +56,13 @@ class Reckon {
 
     //MARK: - check operation validity
 
-    func canAddOperator() -> Bool {
+    func canAddOperationSymbol(_ symbol: String) -> Bool {
         if let stringNumber = numberArray.last {
             if stringNumber.isEmpty {
                 return false
             }
         }
+        appendOperationSymbol(with: symbol)
         return true
     }
 
@@ -77,6 +80,6 @@ class Reckon {
 
     func resetArrays() {
         numberArray = [String()]
-        operatorArray = ["+"]
+        operationSymbolArray = ["+"]
     }
 }
