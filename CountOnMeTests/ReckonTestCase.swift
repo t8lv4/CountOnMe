@@ -16,7 +16,10 @@ class ReckonTestCase: XCTestCase {
         reckon = Reckon()
     }
 
-    func appendReckonArrays(loop count: Int, range: Int) {
+    /* swift 4.2 will better handle randomness.
+     to be rewritten!
+     */
+    func randomlyAppendReckonArrays(loop count: Int, range: Int) {
         reckon.numberArray.removeAll()
 
         for _ in 0...count {
@@ -113,7 +116,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenAnyOperationWithAnyNumbers_WhenReckonningExpression_ThenEpressionShouldBeValid() {
-        appendReckonArrays(loop: 5, range: 100)
+        randomlyAppendReckonArrays(loop: 5, range: 100)
 
         let validity = reckon.isExpressionCorrect()
 
@@ -121,7 +124,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenAnyOperationWithAnyNumbers_WhenQueryingAResult_ThenReckonShouldGiveAresult() {
-        appendReckonArrays(loop: 10000, range: 10000)
+        randomlyAppendReckonArrays(loop: 10000, range: 10000)
 
         let result: Int? = reckon.returnResult()
 
