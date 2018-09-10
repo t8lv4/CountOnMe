@@ -16,14 +16,19 @@ class ReckonTestCase: XCTestCase {
         reckon = Reckon()
     }
 
+    func appendSymbolsAndNumbers(_ numbers: [String], _ symbol: [String]) {
+        reckon.numberArray = numbers
+        reckon.operationSymbolArray = symbol
+    }
+
     /* swift 4.2 will better handle randomness.
      to be rewritten!
      */
-    func randomlyAppendReckonArrays(loop count: Int, range: Int) {
+    func randomlyAppendReckonArrays(loop count: Int, range: UInt32) {
         reckon.numberArray.removeAll()
 
         for _ in 0...count {
-            let anyNumber = Int(arc4random_uniform(100))
+            let anyNumber = Int(arc4random_uniform(range))
             reckon.numberArray.append(String(anyNumber))
 
             let availableOperationSymbols = ["+", "-"]
@@ -32,6 +37,8 @@ class ReckonTestCase: XCTestCase {
             reckon.operationSymbolArray.append(anyOperationSymbol)
         }
     }
+
+    // MARK: Unit Tests
 
     func testGivenBufferIsEmpty_WhenAdding7_ThenBufferShouldContain7() {
         reckon.addNewNumber(7)
@@ -63,8 +70,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenNumberArrayContains4And5_WhenSumming_ThenResultShouldBe9() {
-        reckon.numberArray = ["4", "5"]
-        reckon.operationSymbolArray = ["+", "+"]
+        appendSymbolsAndNumbers(["4", "5"], ["+", "+"])
 
         let sum = Int(reckon.numberArray[0])! + Int(reckon.numberArray[1])!
 
@@ -72,8 +78,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenNumberArrayContains8And5_WhenSubtracting_ThenResultShouldBe3() {
-        reckon.numberArray = ["8", "5"]
-        reckon.operationSymbolArray = ["+", "-"]
+        appendSymbolsAndNumbers(["8", "5"], ["+", "-"])
 
         let subtraction = Int(reckon.numberArray[0])! - Int(reckon.numberArray[1])!
 
@@ -81,8 +86,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenSumming2And6_WhenResetting_ThenArraysShouldBeEmptyStringAndPlusSign() {
-        reckon.numberArray = ["2", "6"]
-        reckon.operationSymbolArray = ["+", "+"]
+        appendSymbolsAndNumbers(["2", "6"], ["+", "+"])
 
         reckon.resetArrays()
 
@@ -91,8 +95,7 @@ class ReckonTestCase: XCTestCase {
     }
 
     func testGivenArraysContain1AndAnySign_WhenAddingAnyOperationSymbol_ThenExpressionShouldBeRejected() {
-        reckon.numberArray = ["1", ""]
-        reckon.operationSymbolArray = ["+", "-"]
+        appendSymbolsAndNumbers(["1", ""], ["+", "-"])
 
         reckon.appendOperationSymbol(with: "plus")
 
