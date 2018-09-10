@@ -11,7 +11,7 @@ class Reckon {
     var numberArray = [String()]
     var operationSymbolArray = ["+"]
 
-    //MARK: - append numbers and operation symbols
+    // MARK: - append numbers and operation symbols
 
     func addNewNumber(_ newNumber: Int) {
         if let stringNumber = numberArray.last {
@@ -34,7 +34,7 @@ class Reckon {
         }
     }
 
-    //MARK: - calculate
+    // MARK: - calculate
 
     func returnResult() -> Int {
         var result = 0
@@ -54,7 +54,7 @@ class Reckon {
         }
     }
 
-    //MARK: - check operation validity
+    // MARK: - check operation validity
 
     func canAddOperationSymbol(_ symbol: String) -> Bool {
         if let stringNumber = numberArray.last {
@@ -75,8 +75,7 @@ class Reckon {
         return 2
     }
 
-
-    //MARK: - reset
+    // MARK: - reset
 
     func resetArrays() {
         numberArray = [String()]

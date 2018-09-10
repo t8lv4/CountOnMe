@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Outlets
-    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
 
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         recordTappedNumber(from: sender)
         updateDisplay()
     }
-
 
     @IBAction func operationTapped(_ sender: UIButton) {
         switch sender.tag {
@@ -64,17 +62,15 @@ class ViewController: UIViewController {
     }
 
     private func renderReckon() {
-        textView.text = textView.text + "=\(reckon.returnResult())"
+        textView.text! += "=\(reckon.returnResult())"
         reckon.resetArrays()
     }
 
     private func recordTappedNumber(from sender: UIButton) {
-        for (counter, numberButton) in numberButtons.enumerated() {
-            if sender == numberButton {
+        for (counter, numberButton) in numberButtons.enumerated() where sender == numberButton {
                 reckon.addNewNumber(counter)
             }
         }
-    }
 
     private func updateDisplay() {
         var text = ""
