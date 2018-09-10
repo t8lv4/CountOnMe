@@ -131,5 +131,4 @@ class ReckonTestCase: XCTestCase {
         XCTAssert(result != nil)
     }
 
-
 }

@@ -89,23 +89,4 @@ class ViewController: UIViewController {
         textView.text = text
     }
 
-//    func appendReckonArrays(_ count: Int) {
-//        reckon.numberArray.removeAll()
-//        for _ in 0...count {
-//            let anyNumber = Int(arc4random_uniform(100))
-//            reckon.numberArray.append(String(anyNumber))
-//
-//            let availableOperationSymbols = ["+", "-"]
-//            // Generate a random index
-//            let randomIndex = Int(arc4random_uniform(UInt32(availableOperationSymbols.count)))
-//            // Get a random item
-//            let anyOperationSymbol = availableOperationSymbols[randomIndex]
-//            reckon.operationSymbolArray.append(anyOperationSymbol)
-//        }
-//        print(reckon.numberArray)
-//        print(reckon.operationSymbolArray)
-//
-//        print(reckon.returnResult())
-//    }
-
 }
