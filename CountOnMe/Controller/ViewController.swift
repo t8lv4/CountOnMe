@@ -31,11 +31,11 @@ class ViewController: UIViewController {
 
     @IBAction func operationTapped(_ sender: UIButton) {
         switch sender.tag {
-        case 0:
-            inputOperationSymbol(with: "plus")
         case 1:
-            inputOperationSymbol(with: "minus")
+            inputOperationSymbol(with: "plus")
         case 2:
+            inputOperationSymbol(with: "minus")
+        case 3:
             inputEqual()
         default:
             return
