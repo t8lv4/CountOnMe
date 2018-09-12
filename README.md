@@ -22,9 +22,8 @@ CountOnMe is an OpenClassrooms assignment. It aims at learning to improve a code
 
 Unit tests automation with jenkins and fastlane.
 
+[The pdf file BonusP7_Integration_Continue](https://github.com/t8lv4/CountOnMe/blob/master/BonusP7_Integration_Continue.pdf) is a step by step description (in french) of a jenkins and fastlane set up. This CI system is deploy locally on macOS 10.13.6.
 
-[The pdf file BonusP7_Integration_Continue](https://github.com/t8lv4/CountOnMe/blob/master/BonusP7_Integration_Continue.pdf) is a step by step description (in french) of a jenkins and fastlane set up. This is deploy locally on a mac.
-
-By the end of this set up you will be able to run tests automatically. If a build fails, you will be able to open a Github issue.
+By the end of this set up we will be able to run tests automatically. If a build fails, we will be able to open a Github issue.
 
 
