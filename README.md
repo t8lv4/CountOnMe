@@ -2,6 +2,10 @@
 
 CountOnMe is an OpenClassrooms assignment. It aims at learning to improve a code base and to write unit tests with [XCTest](https://developer.apple.com/documentation/xctest): 
 
+The original code base is there : https://github.com/AmbroiseCollon/ZozorPlus.git. 
+
+And here is a sample of the README:
+
 > This repository is the base code for [this project](https://openclassrooms.com/projects/ameliorer-une-application-existante) on openclassrooms.com.
 > It's part of OpenClassrooms' iOS path which can be found here.
 
