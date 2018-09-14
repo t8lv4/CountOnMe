@@ -16,13 +16,18 @@ class ReckonTestCase: XCTestCase {
         reckon = Reckon()
     }
 
+    // MARK: Helpers
+
+    /// Create arrays of numbers and binary operation symbols
     func appendSymbolsAndNumbers(_ numbers: [String], _ symbol: [String]) {
         reckon.numberArray = numbers
         reckon.operationSymbolArray = symbol
     }
 
-    /* swift 4.2 will better handle randomness.
-     to be rewritten!
+    /**
+     Create random binary operations sequence with an arbitrary amount of numbers
+     - Note: **swift 4.2 will better handle randomness.
+     To be rewritten!**
      */
     func randomlyAppendReckonArrays(loop count: Int, range: UInt32) {
         reckon.numberArray.removeAll()
@@ -40,26 +45,32 @@ class ReckonTestCase: XCTestCase {
 
     // MARK: Unit Tests
 
+    // MARK: Test appending and resetting
+
+    /// Test appending numbers array
     func testGivenBufferIsEmpty_WhenAdding7_ThenBufferShouldContain7() {
-        reckon.addNewNumber(7)
+        reckon.concatenateNumbers(7)
 
         XCTAssertTrue(reckon.numberArray.contains("7"))
     }
 
+    /// Test appending operation symbol array
     func testGivenOperationSymbolIsEmpty_WhenAddingPlus_ThenArrayShouldContainPlusSign() {
         reckon.appendOperationSymbol(with: "plus")
 
         XCTAssertTrue(reckon.operationSymbolArray.contains("+"))
     }
 
+    /// Test numbers concatenation
     func testGivenNumberArrayContains7_WhenAdding3_ThenArrayShouldContainNumber73() {
         reckon.numberArray[0] = "7"
 
-        reckon.addNewNumber(3)
+        reckon.concatenateNumbers(3)
 
         XCTAssertTrue(reckon.numberArray[0] == "73")
     }
 
+    /// Test the change occured in the numbers array when adding an operation symbol
     func testGivenNumberArrayContains3_WhenAddingOperationSymbol_ThenLastArraysValuesShouldBeEmptyAndMinus() {
         reckon.numberArray[0] = "3"
 
@@ -69,22 +80,7 @@ class ReckonTestCase: XCTestCase {
         XCTAssertTrue(reckon.operationSymbolArray.last == "-")
     }
 
-    func testGivenNumberArrayContains4And5_WhenSumming_ThenResultShouldBe9() {
-        appendSymbolsAndNumbers(["4", "5"], ["+", "+"])
-
-        let sum = Int(reckon.numberArray[0])! + Int(reckon.numberArray[1])!
-
-        XCTAssertTrue(reckon.returnResult() == sum)
-    }
-
-    func testGivenNumberArrayContains8And5_WhenSubtracting_ThenResultShouldBe3() {
-        appendSymbolsAndNumbers(["8", "5"], ["+", "-"])
-
-        let subtraction = Int(reckon.numberArray[0])! - Int(reckon.numberArray[1])!
-
-        XCTAssertTrue(reckon.returnResult() == subtraction)
-    }
-
+    /// Test resetting arrays to default values
     func testGivenSumming2And6_WhenResetting_ThenArraysShouldBeEmptyStringAndPlusSign() {
         appendSymbolsAndNumbers(["2", "6"], ["+", "+"])
 
@@ -94,6 +90,29 @@ class ReckonTestCase: XCTestCase {
         XCTAssertEqual(reckon.operationSymbolArray, ["+"])
     }
 
+    // MARK: Test binary operations results validity
+
+    /// Test addition
+    func testGivenNumberArrayContains4And5_WhenSumming_ThenResultShouldBe9() {
+        appendSymbolsAndNumbers(["4", "5"], ["+", "+"])
+
+        let sum = Int(reckon.numberArray[0])! + Int(reckon.numberArray[1])!
+
+        XCTAssertTrue(reckon.returnResult() == sum)
+    }
+
+    /// Test subtraction
+    func testGivenNumberArrayContains8And5_WhenSubtracting_ThenResultShouldBe3() {
+        appendSymbolsAndNumbers(["8", "5"], ["+", "-"])
+
+        let subtraction = Int(reckon.numberArray[0])! - Int(reckon.numberArray[1])!
+
+        XCTAssertTrue(reckon.returnResult() == subtraction)
+    }
+
+    // MARK: Test expressions to reckon validity
+
+    /// Test invalid expression input: two operation symbols in a row
     func testGivenArraysContain1AndAnySign_WhenAddingAnyOperationSymbol_ThenExpressionShouldBeRejected() {
         appendSymbolsAndNumbers(["1", ""], ["+", "-"])
 
@@ -102,6 +121,7 @@ class ReckonTestCase: XCTestCase {
         XCTAssertFalse(reckon.canAddOperationSymbol("plus"))
     }
 
+    /// Test invalid expression input: equal on an empty array
     func testGivenArraysAreReset_WhenReckoningExpression_ThenExpressionShouldBeRejectedWith0() {
         reckon.resetArrays()
 
@@ -110,6 +130,7 @@ class ReckonTestCase: XCTestCase {
         XCTAssertEqual(validity, 0)
     }
 
+    /// Test invalid expression input: equal on a single number
     func testGivenNumberArrayLastElementIsEmpty_WhenReckoningExpression_ThenExpressionShouldBeRejectedWith1() {
         reckon.numberArray = ["2", ""]
 
@@ -118,6 +139,7 @@ class ReckonTestCase: XCTestCase {
         XCTAssertEqual(validity, 1)
     }
 
+    /// Test an arbitrary number of operations on random Int
     func testGivenAnyOperationWithAnyNumbers_WhenReckonningExpression_ThenEpressionShouldBeValid() {
         randomlyAppendReckonArrays(loop: 5, range: 100)
 
@@ -126,6 +148,7 @@ class ReckonTestCase: XCTestCase {
         XCTAssertEqual(validity, 2)
     }
 
+    /// Test Reckon calculate a result whatever the amount of binary operations
     func testGivenAnyOperationWithAnyNumbers_WhenQueryingAResult_ThenReckonShouldGiveAresult() {
         randomlyAppendReckonArrays(loop: 10000, range: 10000)
 
