@@ -54,11 +54,20 @@ class ReckonTestCase: XCTestCase {
         XCTAssertTrue(reckon.numberArray.contains("7"))
     }
 
-    /// Test appending operation symbol array
+    /// Test appending an empty operation symbol array
     func testGivenOperationSymbolIsEmpty_WhenAddingPlus_ThenArrayShouldContainPlusSign() {
         reckon.appendOperationSymbol(with: "plus")
 
         XCTAssertTrue(reckon.operationSymbolArray.contains("+"))
+    }
+
+    /// Test validity of appending operation symbols array
+    func testGivenNumberArrayLastItemIsNotEmpty_WhenAddingMinus_ThenCanAddOperationSymbolShouldReturnTrue() {
+        reckon.numberArray = ["3", "5"]
+
+        reckon.operationSymbolArray.append("-")
+
+        XCTAssertTrue(reckon.canAddOperationSymbol("minus") == true)
     }
 
     /// Test numbers concatenation

@@ -42,7 +42,7 @@ class Reckon {
             operationSymbolArray.append("-")
             numberArray.append("")
         default:
-            return
+            break
         }
     }
 
