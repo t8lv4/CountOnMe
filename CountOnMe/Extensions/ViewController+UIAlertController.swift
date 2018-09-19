@@ -3,7 +3,6 @@
 //  CountOnMe
 //
 //  Created by Morgan on 30/08/2018.
-//  Copyright © 2018 Ambroise Collon. All rights reserved.
 //
 
 import UIKit
