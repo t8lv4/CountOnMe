@@ -2,7 +2,7 @@
 
 CountOnMe is an OpenClassrooms assignment. It aims at learning to improve a code base and to write unit tests with [XCTest](https://developer.apple.com/documentation/xctest): 
 
-The original code base is there : https://github.com/AmbroiseCollon/ZozorPlus.git. 
+The code base to improve is there : https://github.com/AmbroiseCollon/ZozorPlus.git. 
 
 And here is a sample of the README:
 
@@ -20,12 +20,14 @@ And here is a sample of the README:
 
 
 
+
+
 # Bonus
 
 Unit tests automation with jenkins and fastlane.
 
-[The pdf file Bonus_Integration_Continue](https://github.com/t8lv4/CountOnMe/blob/master/Bonus_Integration_Continue.pdf) is a step by step description (in french) of a jenkins and fastlane set up. This CI system is deployed locally on macOS 10.13.6.
+The pdf file [Bonus_Integration_Continue](https://github.com/t8lv4/CountOnMe/blob/master/Bonus_Integration_Continue.pdf) is a step by step description (in french) of a jenkins and fastlane set up. This CI system is deployed locally on macOS 10.13.6.
 
-By the end of this set up we will be able to run tests automatically. If a build fails, we will be able to open a Github issue.
+By the end of this set up we will be able to run tests automatically. If a jenkins build fails, it will open a Github issue to print out its console output.
 
 
