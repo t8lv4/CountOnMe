@@ -9,21 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - Properties
+
     /// Instance of Reckon
     let reckon = Reckon()
 
     // MARK: - Outlets
+
     /// Where input and result are displayed
     @IBOutlet weak var textView: UITextView!
     /// An array of numbers keyboard
     @IBOutlet var numberButtons: [UIButton]!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        reckon.resetArrays()
-    }
-
     // MARK: - Action
+
     /// Called when the user thouch up inside the numbers keyboard
     @IBAction func tappedNumberButton(_ sender: UIButton) {
         recordTappedNumber(from: sender)
@@ -45,6 +43,11 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Methods
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reckon.resetArrays()
+    }
 
     /**
      Call a method to check the input validity

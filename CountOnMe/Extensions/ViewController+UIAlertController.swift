@@ -16,8 +16,6 @@ extension ViewController {
         - A message is displayed according to the input
         - The user dismiss the alert by clicking a "OK" button
 
-     - Note: This method calls `resetArrays()` and erase the display
-
      - Parameter message: The error message to be displayed
      */
     func presentVCAlert(with message: String) {
@@ -25,9 +23,6 @@ extension ViewController {
 
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
 
-        self.present(alertVC, animated: true, completion: {
-            self.reckon.resetArrays()
-            self.textView.text = ""
-        })
+        self.present(alertVC, animated: true, completion: nil)
     }
 }
