@@ -7,6 +7,12 @@
 
 import UIKit
 
+/**
+ Owns the View
+ - Receives input from the UI
+ - Call model's methods
+ - Update UI
+ */
 class ViewController: UIViewController {
     // MARK: - Properties
 
