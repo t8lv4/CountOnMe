@@ -7,6 +7,18 @@
 
 import Foundation
 
+/// A protocol to display an alert message
+protocol VCAlertDelegate: class {
+    /**
+     Implement a UIAlertController called by the ViewController as a delegate of the Model when the user input is invalid
+     - A message is displayed according to the input
+     - The user dismiss the alert by clicking a "OK" button
+
+     - Parameter message: The error message to be displayed
+     */
+    func presentVCAlert(with: String)
+}
+
 /** Reckon binary operations
  - return result if they are valid
  - reject if they are invalid
@@ -17,6 +29,9 @@ class Reckon {
 
     /// Store binary operation symbols
     var operationSymbolArray = ["+"]
+
+    /// instance of the protocol VCAlertDelegate
+    weak var delegateVCAlert: VCAlertDelegate?
 
     // MARK: - append numbers and operation symbols
 
@@ -94,18 +109,19 @@ class Reckon {
     }
 
     /**
-     Verify the validity of the binary operations to be calculated
-     - Returns: Int
-         - O and 1 describe two different invalid input
-         - 2 is a valid input
+     Verify the validity of the binary operations to be calculated.
+     Call delegate method when invalid
+     - Returns: Bool
      */
-    func isExpressionCorrect() -> Int {
+    func isExpressionCorrect() -> Bool {
         if numberArray.count == 1 {
-            return 0
+            delegateVCAlert?.presentVCAlert(with: "Démarrez un nouveau calcul !")
+            return false
         } else if numberArray.last == "" {
-            return 1
+            delegateVCAlert?.presentVCAlert(with: "Entrez une expression correcte !")
+            return false
         }
-        return 2
+        return true
     }
 
     // MARK: - reset

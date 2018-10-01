@@ -52,7 +52,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         reckon.resetArrays()
+        reckon.delegateVCAlert = self
     }
 
     /**
@@ -75,12 +77,7 @@ class ViewController: UIViewController {
      - if valid call for calculation and display the result
      */
     private func inputEqual() {
-        switch reckon.isExpressionCorrect() {
-        case 0:
-            presentVCAlert(with: "Démarrez un nouveau calcul !")
-        case 1:
-            presentVCAlert(with: "Entrez une expression correcte !")
-        default:
+        if reckon.isExpressionCorrect() {
             renderReckon()
         }
     }
