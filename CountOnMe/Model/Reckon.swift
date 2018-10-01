@@ -36,7 +36,7 @@ class Reckon {
     var operationSymbolArray = ["+"]
 
     /// instance of the protocol VCAlertDelegate
-    weak var delegateVCAlert: VCAlertDelegate?
+    weak var delegateAlertMessage: VCAlertDelegate?
 
     // MARK: - append numbers and operation symbols
 
@@ -118,10 +118,10 @@ class Reckon {
      */
     func isExpressionCorrect() -> Bool {
         if numberArray.count == 1 {
-            delegateVCAlert?.presentVCAlert(with: "Démarrez un nouveau calcul !")
+            delegateAlertMessage?.presentVCAlert(with: "Démarrez un nouveau calcul !")
             return false
         } else if numberArray.last == "" {
-            delegateVCAlert?.presentVCAlert(with: "Entrez une expression correcte !")
+            delegateAlertMessage?.presentVCAlert(with: "Entrez une expression correcte !")
             return false
         }
         return true

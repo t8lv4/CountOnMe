@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         reckon.resetArrays()
-        reckon.delegateVCAlert = self
+        reckon.delegateAlertMessage = self
     }
 
     /**
