@@ -56,7 +56,7 @@ class ReckonTestCase: XCTestCase {
 
     /// Test appending an empty operation symbol array
     func testGivenOperationSymbolIsEmpty_WhenAddingPlus_ThenArrayShouldContainPlusSign() {
-        reckon.appendOperationSymbol(with: "plus")
+        reckon.appendOperationSymbol(.plus)
 
         XCTAssertTrue(reckon.operationSymbolArray.contains("+"))
     }
@@ -67,7 +67,7 @@ class ReckonTestCase: XCTestCase {
 
         reckon.operationSymbolArray.append("-")
 
-        XCTAssertTrue(reckon.canAddOperationSymbol("minus") == true)
+        XCTAssertTrue(reckon.canAddOperationSymbol(with: .minus) == true)
     }
 
     /// Test numbers concatenation
@@ -83,7 +83,7 @@ class ReckonTestCase: XCTestCase {
     func testGivenNumberArrayContains3_WhenAddingOperationSymbol_ThenLastArraysValuesShouldBeEmptyAndMinus() {
         reckon.numberArray[0] = "3"
 
-        reckon.appendOperationSymbol(with: "minus")
+        reckon.appendOperationSymbol(.minus)
 
         XCTAssertTrue(reckon.numberArray.last == "")
         XCTAssertTrue(reckon.operationSymbolArray.last == "-")
@@ -125,9 +125,9 @@ class ReckonTestCase: XCTestCase {
     func testGivenArraysContain1AndAnySign_WhenAddingAnyOperationSymbol_ThenExpressionShouldBeRejected() {
         appendSymbolsAndNumbers(["1", ""], ["+", "-"])
 
-        reckon.appendOperationSymbol(with: "plus")
+        reckon.appendOperationSymbol(.plus)
 
-        XCTAssertFalse(reckon.canAddOperationSymbol("plus"))
+        XCTAssertFalse(reckon.canAddOperationSymbol(with: .plus))
     }
 
     /// Test invalid expression input: equal on an empty array
@@ -136,7 +136,7 @@ class ReckonTestCase: XCTestCase {
 
         let validity = reckon.isExpressionCorrect()
 
-        XCTAssertEqual(validity, 0)
+        XCTAssertEqual(validity, false)
     }
 
     /// Test invalid expression input: equal on a single number
@@ -145,7 +145,7 @@ class ReckonTestCase: XCTestCase {
 
         let validity = reckon.isExpressionCorrect()
 
-        XCTAssertEqual(validity, 1)
+        XCTAssertEqual(validity, false)
     }
 
     /// Test an arbitrary number of operations on random Int
@@ -154,7 +154,7 @@ class ReckonTestCase: XCTestCase {
 
         let validity = reckon.isExpressionCorrect()
 
-        XCTAssertEqual(validity, 2)
+        XCTAssertEqual(validity, true)
     }
 
     /// Test Reckon calculate a result whatever the amount of binary operations

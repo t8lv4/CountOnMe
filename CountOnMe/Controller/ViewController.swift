@@ -38,9 +38,9 @@ class ViewController: UIViewController {
     @IBAction func operationTapped(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            inputOperationSymbol(with: "plus")
+            inputOperationSymbol(.plus)
         case 2:
-            inputOperationSymbol(with: "minus")
+            inputOperationSymbol(.minus)
         case 3:
             inputEqual()
         default:
@@ -63,8 +63,8 @@ class ViewController: UIViewController {
         - if invalid, call an alert with an appropriate message
     - parameter symbol: The user input
      */
-    private func inputOperationSymbol(with symbol: String) {
-        if reckon.canAddOperationSymbol(symbol) {
+    private func inputOperationSymbol(_ symbol: OperationSymbol) {
+        if reckon.canAddOperationSymbol(with: symbol) {
             updateDisplay()
         } else {
             presentVCAlert(with: "Expression incorrecte !")

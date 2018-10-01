@@ -7,10 +7,15 @@
 
 import Foundation
 
+/// Defines OperationSymbol type to group arithmetic operation symbols
+enum OperationSymbol {
+    case plus, minus
+}
+
 /// A protocol to display an alert message
 protocol VCAlertDelegate: class {
     /**
-     Implement a UIAlertController called by the ViewController as a delegate of the Model when the user input is invalid
+     Define a UIAlertController called by the ViewController as a delegate of the Model when the user input is invalid
      - A message is displayed according to the input
      - The user dismiss the alert by clicking a "OK" button
 
@@ -48,16 +53,14 @@ class Reckon {
      Append an operation symbol to an array
      - parameter symbol: A binary operation symbol input by the user
      */
-    func appendOperationSymbol(with symbol: String) {
+    func appendOperationSymbol(_ symbol: OperationSymbol) {
         switch symbol {
-        case "plus":
+        case .plus:
             operationSymbolArray.append("+")
             numberArray.append("")
-        case "minus":
+        case .minus:
             operationSymbolArray.append("-")
             numberArray.append("")
-        default:
-            break
         }
     }
 
@@ -98,13 +101,13 @@ class Reckon {
      - parameter symbol: The operation symbol input by the user
      - Returns: Bool
      */
-    func canAddOperationSymbol(_ symbol: String) -> Bool {
+    func canAddOperationSymbol(with symbol: OperationSymbol) -> Bool {
         if let stringNumber = numberArray.last {
             if stringNumber.isEmpty {
                 return false
             }
         }
-        appendOperationSymbol(with: symbol)
+        appendOperationSymbol(symbol)
         return true
     }
 
