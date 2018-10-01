@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		906FE5C221382D620041FFF1 /* ViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FE5C121382D620041FFF1 /* ViewController+UIAlertController.swift */; };
+		90BD9BEA216250A2003F7FD6 /* VCAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BD9BE9216250A2003F7FD6 /* VCAlertDelegate.swift */; };
+		90BD9BEC216250FA003F7FD6 /* OperationSymbolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BD9BEB216250FA003F7FD6 /* OperationSymbolEnum.swift */; };
 		90CA9A30213AC9E40082D9F8 /* ReckonTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA9A2F213AC9E40082D9F8 /* ReckonTestCase.swift */; };
 		90D3C22F213189DB003D02D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D3C22E213189DB003D02D2 /* Assets.xcassets */; };
 		90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3C2322131AA09003D02D2 /* Reckon.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		906FE5C121382D620041FFF1 /* ViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIAlertController.swift"; sourceTree = "<group>"; };
+		90BD9BE9216250A2003F7FD6 /* VCAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCAlertDelegate.swift; sourceTree = "<group>"; };
+		90BD9BEB216250FA003F7FD6 /* OperationSymbolEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationSymbolEnum.swift; sourceTree = "<group>"; };
 		90CA9A23213AC9850082D9F8 /* CountOnMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CA9A27213AC9850082D9F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CA9A2F213AC9E40082D9F8 /* ReckonTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReckonTestCase.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				90D3C2322131AA09003D02D2 /* Reckon.swift */,
+				90BD9BE9216250A2003F7FD6 /* VCAlertDelegate.swift */,
+				90BD9BEB216250FA003F7FD6 /* OperationSymbolEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BD9BEC216250FA003F7FD6 /* OperationSymbolEnum.swift in Sources */,
 				C926DADF1D7581BB00477020 /* ViewController.swift in Sources */,
+				90BD9BEA216250A2003F7FD6 /* VCAlertDelegate.swift in Sources */,
 				906FE5C221382D620041FFF1 /* ViewController+UIAlertController.swift in Sources */,
 				90D3C2332131AA09003D02D2 /* Reckon.swift in Sources */,
 				C926DADD1D7581BB00477020 /* AppDelegate.swift in Sources */,
