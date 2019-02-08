@@ -14,7 +14,7 @@ protocol VCAlertDelegate: class {
      - A message is displayed according to the input
      - The user dismiss the alert by clicking a "OK" button
 
-     - Parameter message: The error message to be displayed
+     - Parameter with: The error message to be displayed
      */
     func presentVCAlert(with: String)
 }
